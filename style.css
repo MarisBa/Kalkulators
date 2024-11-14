@@ -1,0 +1,236 @@
+/* Global styles to center everything */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7fb;
+    margin: 0;
+}
+
+/* Main calculator container */
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+}
+
+/* Input field styles */
+#calc {
+    width: 100%;
+    padding: 15px;
+    font-size: 2em;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Button grid styles */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+/* Button styles */
+.buttons input {
+    padding: 20px;
+    font-size: 1.4em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons input:hover {
+    background-color: #e0e0e0;
+}
+
+.buttons input:active {
+    transform: scale(0.95);
+}
+
+/* History button styles */
+#historyBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#historyBtn:hover {
+    background-color: #e0e0e0;
+}
+
+#historyBtn:active {
+    transform: scale(0.95);
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: #fff;
+    border: 1px solid #888;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Popup content styling */
+.popup-content {
+    padding: 20px;
+    position: relative;
+    color: #333;
+    font-size: 1em;
+    line-height: 1.5;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* History list styling */
+.history {
+    margin-top: 20px;
+}
+
+.history h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.history ul {
+    list-style-type: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 0;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* History list item styling */
+.history li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Styling for history entry text */
+.history li span {
+    flex-grow: 1;
+    margin-right: 10px;
+    color: #333;
+}
+
+/* Styling for delete button */
+.history li button {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.history li button:hover {
+    background-color: #ff1a1a;
+}
+
+.history li button:active {
+    transform: scale(0.95);
+}
+
+/* Clear history button */
+#clearHistoryBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#clearHistoryBtn:hover {
+    background-color: #e0e0e0;
+}
+
+#clearHistoryBtn:active {
+    transform: scale(0.95);
+}
+
+/* Animations for fade and slide-in effects */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
